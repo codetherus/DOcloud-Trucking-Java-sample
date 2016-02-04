@@ -27,7 +27,7 @@ The sample consists of a Java project which contains:
 
 ### Prerequisites
 
-1- Install [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html). 
+1. Install [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html). 
 Maven will check the version based on either your path or your `JAVA_HOME` environment 
 variable. If Maven cannot find the correct version, it will notify you with an error 
 message. The version of Java from your path can be checked using this command:
@@ -35,13 +35,13 @@ message. The version of Java from your path can be checked using this command:
 java -version
 ```
 
-2- Install [Maven](https://Maven.apache.org/download.cgi).
+2. Install [Maven](https://Maven.apache.org/download.cgi).
 Once installed, you can check that it is accessible using this command:
 ```
 mvn --version
 ```
 
-3- Get the IBM DOcloud base URL and an API key, which are accessible on the 
+3. Get the IBM DOcloud base URL and an API key, which are accessible on the 
 [Get API Key page](https://dropsolve-oaas.docloud.ibmcloud.com/dropsolve/api) once you 
 have registered and logged in to DOcloud. Copy the base URL and the API key 
 to the maven properties in your `~/.m2/settings.xml` settings file, where
@@ -60,7 +60,7 @@ to the maven properties in your `~/.m2/settings.xml` settings file, where
 </profile>
 ```
 
-4- Download and install the IBM Docloud API for Java client libraries.
+4. Download and install the IBM Docloud API for Java client libraries.
 You can download the library from the [developer center](https://developer.ibm.com/docloud/docs/java-client-api/java-client-library/).
 Extract the jar file starting with `docloud_api_java_client` from the zip file (do not take the javadoc jar file).
 Then add the jar file to your Maven local repository like this:
@@ -70,7 +70,7 @@ mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.ibm.optim.oaas -Dar
 
 ### Build with Maven
 
-1- From the `trucking` subdirectory, compile with Maven. 
+1. From the `trucking` subdirectory, compile with Maven. 
 ```
 mvn install
 ```
@@ -81,7 +81,7 @@ The application can be run with either a single job request or with multiple job
 from the same model, but with different data for each. The default pom.xml is set up to run
 as a single request using the main class `com.ibm.optim.oaas.sample.trucking.Controller`.
 
-1- From the `trucking` subdirectory, execute with Maven.
+1. From the `trucking` subdirectory, execute with Maven.
 ```
 mvn exec:java
 ```
@@ -94,7 +94,7 @@ modify the pom.xml file to set the main class to `com.ibm.optim.oaas.sample.truc
 <mainClass>com.ibm.optim.oaas.sample.trucking.ControllerMultiJobs</mainClass>
 ```
 
-1- After updating the pom.xml file, execute with Maven from the `trucking` subdirectory.
+1. After updating the pom.xml file, execute with Maven from the `trucking` subdirectory.
 ```
 mvn exec:java
 ```

@@ -62,7 +62,7 @@
   <build>
     <plugins>
 
-			<!-- Ensure we use JDK 1.7 -->
+			<!-- Ensure that we use JDK 1.7 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -73,7 +73,7 @@
 				</configuration>
 			</plugin>
 			
-			<!-- Run the sample: mvn exec:java -->
+			<!-- To run the sample: mvn exec:java -->
 			 <plugin>
 		     <groupId>org.codehaus.mojo</groupId>
 		     <artifactId>exec-maven-plugin</artifactId>
