@@ -27,17 +27,19 @@ The sample consists of a Java project which contains:
 
 ### Prerequisites
 
-1. Install [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html). 
-Maven will check the version based on either your path or your `JAVA_HOME` environment 
+1. Install [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).  
+   Maven will check the version based on either your path or your `JAVA_HOME` environment 
 variable. If Maven cannot find the correct version, it will notify you with an error 
 message. The version of Java from your path can be checked using this command:
-```
+
+   ```
 java -version
 ```
 
-2. Install [Maven](https://Maven.apache.org/download.cgi).
-Once installed, you can check that it is accessible using this command:
-```
+2. Install [Maven](https://Maven.apache.org/download.cgi).  
+   Once installed, you can check that it is accessible using this command:
+
+   ```
 mvn --version
 ```
 
@@ -45,33 +47,36 @@ mvn --version
 [Get API Key page](https://dropsolve-oaas.docloud.ibmcloud.com/dropsolve/api) once you 
 have registered and logged in to DOcloud. Copy the base URL and the API key 
 to the maven properties in your `~/.m2/settings.xml` settings file, where
-* `yourKey` is the API key (clientID) that you generate after registering.
-* `yourURL` is the base URL that you access after registering.
-```xml
-<profile>
-  <id>docloud</id>
-  <activation>
-    <activeByDefault>true</activeByDefault>
-  </activation>
-  <properties>
+  * `yourKey` is the API key (clientID) that you generate after registering.
+  * `yourURL` is the base URL that you access after registering.
+
+   ```xml
+  <profile>
+    <id>docloud</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
       <docloud.baseurl>yourURL</docloud.baseurl>
       <docloud.apikey.clientid>yourKey</docloud.apikey.clientid>
-  </properties>
-</profile>
+    </properties>
+  </profile>
 ```
 
-4. Download and install the IBM Docloud API for Java client libraries.
-You can download the library from the [developer center](https://developer.ibm.com/docloud/docs/java-client-api/java-client-library/).
+4. Download and install the IBM Docloud API for Java client libraries.  
+   You can download the library from the [developer center](https://developer.ibm.com/docloud/docs/java-client-api/java-client-library/).  
 Extract the jar file starting with `docloud_api_java_client` from the zip file (do not take the javadoc jar file).
 Then add the jar file to your Maven local repository like this:
-```
+
+   ```
 mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.ibm.optim.oaas -DartifactId=api_java_client -Dversion=1.0-R1-SNAPSHOT -Dpackaging=jar
 ```
 
 ### Build with Maven
 
-1. From the `trucking` subdirectory, compile with Maven. 
-```
+* From the sample directory, compile with Maven:
+
+   ```
 mvn install
 ```
 
@@ -81,8 +86,9 @@ The application can be run with either a single job request or with multiple job
 from the same model, but with different data for each. The default pom.xml is set up to run
 as a single request using the main class `com.ibm.optim.oaas.sample.trucking.Controller`.
 
-1. From the `trucking` subdirectory, execute with Maven.
-```
+* From the `trucking` subdirectory, execute with Maven.
+
+   ```
 mvn exec:java
 ```
 
@@ -90,12 +96,14 @@ mvn exec:java
 
 To run the sample application with multiple job requests from the same model with different data,
 modify the pom.xml file to set the main class to `com.ibm.optim.oaas.sample.trucking.ControllerMultiJobs`:
-```xml
+
+   ```xml
 <mainClass>com.ibm.optim.oaas.sample.trucking.ControllerMultiJobs</mainClass>
 ```
 
-1. After updating the pom.xml file, execute with Maven from the `trucking` subdirectory.
-```
+* After updating the pom.xml file, execute with Maven from the `trucking` subdirectory.
+
+   ```
 mvn exec:java
 ```
 
