@@ -5,6 +5,6 @@
 	"development": [ "Java" ],
 	"category": [ {"APPLICATION":["Desktop Application"]} ],
 	"industry": [ "Transportation" ],
-	"abstract": "A desktop application that shows how to solve a simple transportation optimization problem. The application demonstrates how to integrate the IBM DOcloud Java client in a simple Java standalone application and stream data and results back and forth."
+	"abstract": "A desktop application that demonstrates how to solve a transportation optimization problem, integrating the IBM DOcloud Java client with a simple Java application where data and results are streamed back and forth."
 }
 
