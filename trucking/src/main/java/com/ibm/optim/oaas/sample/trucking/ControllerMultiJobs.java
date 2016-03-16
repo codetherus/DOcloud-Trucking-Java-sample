@@ -228,7 +228,7 @@ public class ControllerMultiJobs {
 		String apiKeyClientId = args[1];
 
     // Number of jobs to be submitted in parallel
-    final int NB_JOBS = 160;
+    final int NB_JOBS = 10;
 
     // Create the controller
     ControllerMultiJobs ctrl = new ControllerMultiJobs(baseURL, apiKeyClientId, NB_JOBS);
