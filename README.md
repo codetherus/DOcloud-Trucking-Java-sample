@@ -1,11 +1,11 @@
 # IBM Decision Optimization on Cloud Trucking Java Client sample
 
-IBM Decision Optimization on Cloud (DOcloud) allows you to solve optimization
+IBM Decision Optimization on Cloud (DOcplexcloud) allows you to solve optimization
 problems on the cloud without installing or configuring a solver. 
 
 This sample shows you how you can build a simple Java application that integrates 
 with the IBM Decision Optimization on Cloud service, streaming data and results 
-between the application and DOcloud. You can then solve the model on DOcloud and 
+between the application and DOcplexcloud. You can then solve the model on DOcplexcloud and 
 return the results to your local data model or application. The sample shows you 
 the necessary Java libraries and the API that you need to create and send job requests.
 
@@ -43,9 +43,9 @@ java -version
 mvn --version
 ```
 
-3. Get the IBM DOcloud base URL and an API key, which are accessible on the 
+3. Get the IBM DOcplexcloud base URL and an API key, which are accessible on the 
 [Get API Key page](https://dropsolve-oaas.docloud.ibmcloud.com/dropsolve/api) once you 
-have registered and logged in to DOcloud. Copy the base URL and the API key 
+have registered and logged in to DOcplexcloud. Copy the base URL and the API key 
 to the maven properties in your `~/.m2/settings.xml` settings file, where
   * `yourKey` is the API key (clientID) that you generate after registering.
   * `yourURL` is the base URL that you access after registering.
@@ -63,7 +63,7 @@ to the maven properties in your `~/.m2/settings.xml` settings file, where
   </profile>
 ```
 
-4. Download and install the IBM Docloud API for Java client libraries.  
+4. Download and install the IBM DOcplexcloud API for Java client libraries.  
    You can download the library from the [developer center](https://developer.ibm.com/docloud/docs/java-client-api/java-client-library/).  
 Extract the jar file starting with `docloud_api_java_client` from the zip file (do not take the javadoc jar file).
 Then add the jar file to your Maven local repository like this:
