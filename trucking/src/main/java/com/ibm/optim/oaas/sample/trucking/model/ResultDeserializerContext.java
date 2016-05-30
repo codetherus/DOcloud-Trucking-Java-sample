@@ -62,7 +62,8 @@ public class ResultDeserializerContext extends DefaultDeserializationContext {
 		return new ResultDeserializerContext(this, factory);
 	}
 
-	// This code works with Jackson 2.2.2
+    /**
+     * This code works with Jackson 2.2.2
 	@Override
 	public ReadableObjectId findObjectId(Object id, ObjectIdGenerator<?> generator) {
 		ReadableObjectId oid = super.findObjectId(id, generator);
@@ -76,10 +77,9 @@ public class ResultDeserializerContext extends DefaultDeserializationContext {
 				}
 		}
 		return oid;
-	}
-
-	/**
-	 * Code to use for Jackson > 2.4.0
+     }
+     */
+	// Code to use for Jackson > 2.4.0
 	@Override
 	public ReadableObjectId findObjectId(Object id, ObjectIdGenerator<?> generator, ObjectIdResolver resolverType) {
 		ReadableObjectId oid = super.findObjectId(id, generator,resolverType);
@@ -94,7 +94,6 @@ public class ResultDeserializerContext extends DefaultDeserializationContext {
 		}
 		return oid;
 	}
-	*/
 	
 	protected Object findObject(Class<?> scope, Object id) {
 		if (scope.equals(Location.class)) {
