@@ -111,7 +111,7 @@ mvn exec:java
     
 ### Server side runtime dependencies loaded by Maven (see the pom.xml file)
 
-* com.ibm.optim.org.slf4j:slf4j-jdk14
+* org.slf4j:slf4j-jdk14
 * com.ibm.optim.oaas:api_java_client
 * com.ibm.icu:icu4j
 * org.apache.httpcomponents:httpclient
