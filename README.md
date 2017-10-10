@@ -32,35 +32,39 @@ The sample consists of a Java project which contains:
 variable. If Maven cannot find the correct version, it will notify you with an error 
 message. The version of Java from your path can be checked using this command:
 
-   ```
+```
 java -version
 ```
 
 2. Install [Maven](https://Maven.apache.org/download.cgi).  
    Once installed, you can check that it is accessible using this command:
 
-   ```
+```
 mvn --version
 ```
 
-3. Get the IBM DOcplexcloud base URL and an API key, which are accessible on the 
-[Get API Key page](https://dropsolve-oaas.docloud.ibmcloud.com/dropsolve/api) once you 
+3. Get the IBM DOcplexcloud base URL and an API key, which are accessible on theÂ 
+[Get API KeyÂ page](https://dropsolve-oaas.docloud.ibmcloud.com/dropsolve/api) once you 
 have registered and logged in to DOcplexcloud. Copy the base URL and the API key 
 to the maven properties in your `~/.m2/settings.xml` settings file, where
   * `yourKey` is the API key (clientID) that you generate after registering.
   * `yourURL` is the base URL that you access after registering.
 
-   ```xml
-  <profile>
-    <id>docloud</id>
-    <activation>
-      <activeByDefault>true</activeByDefault>
-    </activation>
-    <properties>
-      <docloud.baseurl>yourURL</docloud.baseurl>
-      <docloud.apikey.clientid>yourKey</docloud.apikey.clientid>
-    </properties>
-  </profile>
+```xml
+<settings>
+  <profiles>
+    <profile>
+      <id>docloud</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <docloud.baseurl>yourURL</docloud.baseurl>
+        <docloud.apikey.clientid>yourKey</docloud.apikey.clientid>
+      </properties>
+    </profile>
+  <profiles>
+</settings>
 ```
 
 4. Download and install the IBM DOcplexcloud API for Java client libraries.  
@@ -68,7 +72,7 @@ to the maven properties in your `~/.m2/settings.xml` settings file, where
 Extract the jar file starting with `docloud_api_java_client` from the zip file (do not take the javadoc jar file).
 Then add the jar file to your Maven local repository like this:
 
-   ```
+```
 mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.ibm.optim.oaas -DartifactId=api_java_client -Dversion=1.0-R1-SNAPSHOT -Dpackaging=jar
 ```
 
@@ -76,7 +80,7 @@ mvn install:install-file -Dfile=<path-to-file> -DgroupId=com.ibm.optim.oaas -Dar
 
 * From the sample directory, compile with Maven:
 
-   ```
+```
 mvn install
 ```
 
@@ -88,7 +92,7 @@ as a single request using the main class `com.ibm.optim.oaas.sample.trucking.Con
 
 * From the `trucking` subdirectory, execute with Maven.
 
-   ```
+```
 mvn exec:java
 ```
 
@@ -97,13 +101,13 @@ mvn exec:java
 To run the sample application with multiple job requests from the same model with different data,
 modify the pom.xml file to set the main class to `com.ibm.optim.oaas.sample.trucking.ControllerMultiJobs`:
 
-   ```xml
+```xml
 <mainClass>com.ibm.optim.oaas.sample.trucking.ControllerMultiJobs</mainClass>
 ```
 
 * After updating the pom.xml file, execute with Maven from the `trucking` subdirectory.
 
-   ```
+```
 mvn exec:java
 ```
 
@@ -122,13 +126,13 @@ mvn exec:java
 A shipping company uses a dispatching system to schedule its truck fleet. The dispatching 
 system collects orders from the order management system, assigns the orders to trucks, and 
 schedules the departures and deliveries. Its functions include generating bills of loading, 
-loading tables, route maps for the drivers’ GPS, and departure time-tables. It also updates 
+loading tables, route maps for the driversâ€™ GPS, and departure time-tables. It also updates 
 the order management system with projected delivery windows, which in turn informs the 
 recipients. Currently, the assignment of orders to trucks, which defines the truck routes, 
 is done heuristically using a set of business rules that the company has found to be 
 effective in the past. However, the VP of Operations believes that substantial cost 
 savings and on-time performance improvements might be achievable with a more systematic 
-routing algorithm. The company’s Operations Research department has created such an 
+routing algorithm. The companyâ€™s Operations Research department has created such an 
 algorithm using IBM Decision Optimization on Cloud. The IT department now has been tasked 
 to deploy this routing algorithm integrated in the dispatching system.
 
@@ -188,6 +192,7 @@ Aggregated quantity transported from Hub: H to Spoke: F using truck type: SmallT
 Aggregated quantity transported from Hub: H to Spoke: F using truck type: BigTruck 	= 699
 ------------------------------------------------
 ```
+
 For an operational solution, this data can be either:
 * Streamed directly to a noSQL database such as MongoDB
 * Stored in a relational database (since the data structures in the results map directly to tables)
